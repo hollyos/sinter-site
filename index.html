@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sinter - full-lifecycle engineering for coding agents</title>
+<meta name="description" content="A plugin that makes your coding agent size the job before it starts, fix root causes, and prove the work before claiming it is done.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<link rel="stylesheet" href="assets/sinter.css">
+<script>try{var t=localStorage.getItem("sinter-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+</head>
+<body>
+<a class="skiplink" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="railtoggle" type="button" aria-expanded="false" aria-controls="rail">Menu</button>
+  <a class="brand" href="index.html"><svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10e1ff"/><stop offset=".38" stop-color="#6080ff"/><stop offset=".62" stop-color="#8e5fff"/><stop offset="1" stop-color="#ff2ba8"/></linearGradient></defs><path fill="url(#bm)" fill-rule="evenodd" d="M41.81 38.4L37.78 38.4L36.22 39.64L19.31 39.64L19.31 42.9L37.16 42.9L37.93 42.43L41.81 38.55Z M12.33 38.71L12.33 38.86L12.02 39.17L12.02 39.48L11.86 39.64L11.86 42.74L12.02 42.9L12.02 43.05L12.17 43.21L12.17 43.36L12.48 43.67L12.64 43.67L12.79 43.83L16.98 43.83L17.14 43.67L17.29 43.67L17.45 43.52L17.6 43.52L17.6 43.36L17.76 43.21L17.76 43.05L17.91 42.9L17.91 39.48L17.76 39.33L17.76 39.17L17.14 38.55L16.83 38.55L16.67 38.4L13.1 38.4L12.95 38.55L12.64 38.55L12.48 38.71Z M38.71 32.5L38.55 32.66L38.55 36.22L38.71 36.38L38.71 36.84L38.55 37.0L38.55 37.16L38.71 37.31L41.97 37.31L41.97 32.5Z M12.02 24.12L12.02 24.28L16.67 28.93L17.6 29.4L35.14 29.4L35.76 29.71L37.0 30.95L37.78 31.41L41.81 31.41L41.81 31.26L37.0 26.45L36.22 26.14L18.84 26.14L18.22 25.83L16.36 24.12Z M11.86 18.38L11.86 23.03L15.59 23.03L15.59 18.38Z M11.86 17.29L16.36 17.29L16.67 17.14L17.91 15.9L18.53 15.59L35.14 15.59L35.14 12.33L17.29 12.33L16.21 12.79L12.02 16.98Z M37.31 11.4L36.84 11.86L36.84 12.17L36.69 12.33L36.69 15.9L36.84 16.05L36.84 16.36L37.47 16.98L37.78 16.98L37.93 17.14L41.5 17.14L41.66 16.98L41.81 16.98L41.97 16.83L42.12 16.83L42.43 16.52L42.43 16.36L42.59 16.21L42.59 12.33L42.43 12.17L42.43 12.02L42.28 11.86L42.28 11.71L42.12 11.55L41.97 11.55L41.81 11.4L41.66 11.4L41.5 11.24L37.62 11.24L37.47 11.4Z M4.26 6.9L6.9 5.03L10.47 4.26L46.0 4.26L48.48 4.88L50.81 6.28L53.14 9.22L53.91 12.33L53.91 44.14L53.45 46.16L51.9 48.79L49.72 50.66L46.16 51.74L9.69 51.74L6.59 50.97L4.26 49.26L2.71 47.09L1.93 43.98L1.93 11.86L2.71 9.07Z M3.02 6.74L1.78 8.76L1.0 11.55L1.0 44.45L2.24 48.33L4.26 50.66L7.05 52.21L9.38 52.67L46.93 52.67L50.19 51.59L52.98 49.1L54.22 46.93L54.84 44.29L54.84 11.55L53.6 7.98L51.74 5.66L48.64 3.79L46.78 3.33L9.07 3.33L5.5 4.57Z"/></svg><svg class="brand__lockup" viewBox="0 0 268 56" aria-hidden="true" focusable="false"><defs><linearGradient id="bl" x1="0" y1="0" x2="1" y2="0.6"><stop offset="0" stop-color="#10e1ff"/><stop offset=".38" stop-color="#6080ff"/><stop offset=".62" stop-color="#8e5fff"/><stop offset="1" stop-color="#ff2ba8"/></linearGradient></defs><g fill="url(#bl)" fill-rule="evenodd"><path d="M41.81 38.4L37.78 38.4L36.22 39.64L19.31 39.64L19.31 42.9L37.16 42.9L37.93 42.43L41.81 38.55Z M12.33 38.71L12.33 38.86L12.02 39.17L12.02 39.48L11.86 39.64L11.86 42.74L12.02 42.9L12.02 43.05L12.17 43.21L12.17 43.36L12.48 43.67L12.64 43.67L12.79 43.83L16.98 43.83L17.14 43.67L17.29 43.67L17.45 43.52L17.6 43.52L17.6 43.36L17.76 43.21L17.76 43.05L17.91 42.9L17.91 39.48L17.76 39.33L17.76 39.17L17.14 38.55L16.83 38.55L16.67 38.4L13.1 38.4L12.95 38.55L12.64 38.55L12.48 38.71Z M38.71 32.5L38.55 32.66L38.55 36.22L38.71 36.38L38.71 36.84L38.55 37.0L38.55 37.16L38.71 37.31L41.97 37.31L41.97 32.5Z M12.02 24.12L12.02 24.28L16.67 28.93L17.6 29.4L35.14 29.4L35.76 29.71L37.0 30.95L37.78 31.41L41.81 31.41L41.81 31.26L37.0 26.45L36.22 26.14L18.84 26.14L18.22 25.83L16.36 24.12Z M11.86 18.38L11.86 23.03L15.59 23.03L15.59 18.38Z M11.86 17.29L16.36 17.29L16.67 17.14L17.91 15.9L18.53 15.59L35.14 15.59L35.14 12.33L17.29 12.33L16.21 12.79L12.02 16.98Z M37.31 11.4L36.84 11.86L36.84 12.17L36.69 12.33L36.69 15.9L36.84 16.05L36.84 16.36L37.47 16.98L37.78 16.98L37.93 17.14L41.5 17.14L41.66 16.98L41.81 16.98L41.97 16.83L42.12 16.83L42.43 16.52L42.43 16.36L42.59 16.21L42.59 12.33L42.43 12.17L42.43 12.02L42.28 11.86L42.28 11.71L42.12 11.55L41.97 11.55L41.81 11.4L41.66 11.4L41.5 11.24L37.62 11.24L37.47 11.4Z M4.26 6.9L6.9 5.03L10.47 4.26L46.0 4.26L48.48 4.88L50.81 6.28L53.14 9.22L53.91 12.33L53.91 44.14L53.45 46.16L51.9 48.79L49.72 50.66L46.16 51.74L9.69 51.74L6.59 50.97L4.26 49.26L2.71 47.09L1.93 43.98L1.93 11.86L2.71 9.07Z M3.02 6.74L1.78 8.76L1.0 11.55L1.0 44.45L2.24 48.33L4.26 50.66L7.05 52.21L9.38 52.67L46.93 52.67L50.19 51.59L52.98 49.1L54.22 46.93L54.84 44.29L54.84 11.55L53.6 7.98L51.74 5.66L48.64 3.79L46.78 3.33L9.07 3.33L5.5 4.57Z"/><g transform="translate(78 17)"><path d="M172.13 3.36L172.39 3.11L182.22 3.11L182.48 3.36L183.0 3.36L183.26 3.62L183.52 3.62L184.29 4.4L184.29 4.66L184.55 4.92L184.55 5.44L184.81 5.69L184.81 7.76L184.55 8.02L184.55 8.54L184.29 8.8L184.29 9.06L183.52 9.84L183.26 9.84L183.0 10.09L182.74 10.09L182.48 10.35L181.96 10.35L181.71 10.61L172.39 10.61L172.13 10.35Z M169.02 0.26L168.76 0.78L168.76 20.96L169.28 21.48L171.87 21.48L172.13 20.96L172.13 13.72L172.39 13.46L178.86 13.46L180.93 16.05L184.55 21.48L187.92 21.48L188.18 20.96L187.66 19.93L186.88 19.15L183.0 13.72L183.26 13.2L184.81 12.94L186.36 11.91L187.66 10.09L187.66 9.58L188.18 8.54L188.18 4.92L187.92 4.66L187.92 3.88L186.88 2.07L185.85 1.04L183.26 -0.0L169.54 -0.0Z M134.6 0.26L133.56 1.81L133.56 19.15L134.08 20.19L135.12 21.22L135.89 21.48L151.94 21.48L152.46 20.96L152.46 19.15L152.2 18.64L151.42 18.38L137.19 18.38L136.67 17.86L136.67 12.68L137.19 12.16L149.61 12.16L149.87 11.91L149.87 9.58L149.61 9.32L136.93 9.32L136.67 9.06L136.93 8.54L136.67 8.02L136.93 7.76L136.67 3.62L137.19 3.11L151.94 3.11L152.46 2.59L152.2 0.26L151.94 -0.0L135.12 -0.0Z M98.36 -0.0L97.85 0.52L97.85 2.85L98.11 3.11L98.62 3.11L98.88 3.36L99.92 3.36L100.18 3.11L100.69 3.36L101.21 3.36L101.47 3.11L102.51 3.11L102.76 3.36L103.28 3.11L104.58 3.11L104.84 3.36L105.35 3.36L105.87 3.11L106.13 3.36L106.13 20.96L106.39 21.48L108.98 21.48L109.49 20.71L109.49 3.36L109.75 3.11L110.01 3.36L113.64 3.36L113.89 3.11L114.15 3.36L117.52 3.36L118.29 2.85L118.29 0.52L118.04 -0.0Z M61.35 -0.0L60.84 1.81L61.09 2.59L61.09 21.22L61.35 21.48L63.94 21.48L64.2 21.22L64.2 4.92L64.46 4.66L78.69 21.48L81.54 21.48L82.06 20.96L82.06 0.52L81.8 -0.0L79.21 -0.0L78.95 0.26L78.95 16.05L78.69 16.31L78.18 16.05L64.98 -0.0Z M41.16 -0.0L40.65 0.52L40.65 21.22L40.91 21.48L43.49 21.48L44.01 20.96L44.01 0.52L43.49 -0.0Z M3.38 1.29L2.34 2.59L1.56 4.4L1.56 8.02L2.34 9.84L3.89 11.39L5.71 12.16L16.84 12.42L18.39 13.72L18.65 16.31L17.35 17.86L16.32 18.38L5.96 18.38L4.67 17.86L4.15 17.08L2.86 16.82L1.56 17.86L1.56 19.41L3.12 20.96L4.41 21.48L17.61 21.48L19.42 20.71L21.24 18.89L22.01 17.08L22.01 13.46L21.24 11.65L19.68 10.09L17.87 9.32L7.52 9.32L6.48 9.06L5.45 8.28L4.93 7.25L4.93 5.18L5.71 3.88L7.26 3.11L17.09 3.11L19.16 4.4L20.46 4.4L21.24 3.62L20.98 1.55L19.94 0.52L18.39 -0.0L6.22 -0.0Z"/></g></g></svg><span class="visually-hidden">Sinter documentation: home</span></a><span class="brand__ver" aria-hidden="true">v0.1.0</span><div class="topbar__spacer"></div>
+  <button class="themetoggle" id="themeToggle" type="button"
+    aria-label="Colour theme: following system. Activate to choose light or dark.">
+    <span class="ico ico--auto"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="9" rx="1"/><path d="M5 13.5h6"/></svg></span>
+    <span class="ico ico--light"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><path d="M8 1v1.6M8 13.4V15M15 8h-1.6M2.6 8H1M12.9 3.1l-1.1 1.1M4.2 11.8l-1.1 1.1M12.9 12.9l-1.1-1.1M4.2 4.2 3.1 3.1"/></svg></span>
+    <span class="ico ico--dark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13.5 9.6A5.8 5.8 0 0 1 6.4 2.5a5.8 5.8 0 1 0 7.1 7.1Z"/></svg></span>
+    <span id="themeLabel">Auto</span>
+  </button>
+  <nav class="topbar__links" aria-label="Primary">
+    <a href="start.html">Start</a><a href="concepts.html">Concepts</a>
+    <a href="commands.html">Commands</a><a href="skills.html">Skills</a>
+  </nav>
+</header>
+<p id="themeStatus" class="visually-hidden" role="status" aria-live="polite"></p>
+<div class="shell">
+  <nav class="rail" id="rail" aria-label="Documentation"><div class="rail__group">Start</div><a href="index.html">Overview</a><a href="start.html">Getting started</a><a href="concepts.html">Core concepts</a><div class="rail__group">Reference</div><a href="commands.html">Commands</a><a href="skills.html">Skills</a><a href="stacks.html">Stacks &amp; languages</a><a href="agents.html">Agents</a><div class="rail__group">Operating</div><a href="autonomy.html">Autonomy &amp; safety</a><a href="compliance.html">Compliance</a><a href="config.html">Configuration</a><div class="rail__group">Project</div><a href="harnesses.html">Harnesses</a><a href="credits.html">Attribution</a></nav>
+  <main id="content" tabindex="-1">
+    <section class="hero">
+      <img class="hero__lockup" src="assets/logo-lockup.svg" width="268" height="56"
+           alt="Sinter" fetchpriority="high">
+      <span class="eyebrow">Plugin for Claude&nbsp;Code, Codex and Cursor</span>
+      <h1>Your coding agent,<br>held to <em>engineering</em> standards.</h1>
+      <p class="lede">Coding agents have two failure modes: they over-build the small thing and
+      under-think the large one. Sinter makes yours size the job before it starts, find the
+      real cause before it patches, and prove the work before it says done.</p>
+      <div class="hero__cta">
+        <a class="btn btn--solid" href="start.html">Install it</a>
+        <a class="btn btn--ghost" href="#changes">See what changes</a>
+        <a class="btn btn--ghost" href="commands.html">Command reference</a>
+      </div>
+    </section>
+
+    <h2 id="changes">What changes</h2>
+    <p>Nothing here is a new command you have to remember. These are defaults, they apply
+    to the way you already talk to your agent.</p>
+    <div class="scroller reveal" role="region" tabindex="0" aria-label="Table: What agents tend to do and related columns, scrollable"><table class="reveal ba">
+      <th scope="col"ead><tr><th scope="col">What agents tend to do</th><th scope="col">What Sinter does instead</th></tr></thead>
+      <tbody>
+        <tr><td>Gives a typo fix the same ceremony as a new service</td>
+            <td>Reads the task, picks a depth, and says which one in a line</td></tr>
+        <tr><td>Says &ldquo;fixed&rdquo; without running anything</td>
+            <td>Every completion claim carries the output of a command that ran</td></tr>
+        <tr><td>Patches the one call site the ticket named</td>
+            <td>Greps every caller first, then fixes at the root: leaving no siblings broken</td></tr>
+        <tr><td>Writes a helper the codebase already has</td>
+            <td>Searches for it before writing, and reuses what it finds</td></tr>
+        <tr><td>Recalls an API signature that changed two majors ago</td>
+            <td>Reads your lockfile, then the docs for that version</td></tr>
+        <tr><td>Adds a dependency for something the standard library does</td>
+            <td>Works down a ladder: does it need to exist, is it already here, does the platform do it</td></tr>
+        <tr><td>Quietly turns a one-line request into a 400-line diff</td>
+            <td>Announces the escalation and why, before writing the extra code</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>It sizes the job first</h2>
+    <p>One router runs before any work and picks a depth lane. Everything downstream: how much gets built, what the test policy is, whether a plan and a human gate are
+    required: follows from that one decision.</p>
+    <div class="scroller reveal" role="region" tabindex="0" aria-label="Table: Lane and related columns, scrollable"><table class="reveal">
+      <th scope="col"ead><tr><th scope="col">Lane</th><th scope="col">For</th><th scope="col">Tests</th><th scope="col">You get</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag">lazy</span></td><td>One file, a known fix</td>
+            <td>One runnable check if the logic is non-trivial</td><td>Code, then three lines</td></tr>
+        <tr><td><span class="tag tag--molten">standard</span></td><td>A feature, several files, a new dependency</td>
+            <td>Red/green TDD</td><td>The complete change, plus the tradeoffs</td></tr>
+        <tr><td><span class="tag tag--flux">full</span></td><td>A new system, a spec, a migration</td>
+            <td>TDD, behavioural verification, quality gates</td><td>A plan you approve before code exists</td></tr>
+      </tbody>
+    </table></div>
+
+    <p><b>Try it.</b> Describe a task the way you would to your agent. This runs the same
+    rules the router uses.</p>
+    <div class="router reveal" id="router">
+      <div class="router__in">
+        <label class="visually-hidden" for="routerIn">Describe a task</label>
+        <input id="routerIn" type="text" placeholder="e.g. quick fix for the login token check"
+               autocomplete="off" spellcheck="false">
+      </div>
+      <div class="router__out" role="status" aria-live="polite" aria-atomic="true">
+        <div class="router__lane" id="routerLane"></div>
+        <div class="router__why" id="routerWhy"></div>
+      </div>
+      <div class="router__ex">
+        <button type="button">fix a typo in the README</button>
+        <button type="button">quick fix for the login token check</button>
+        <button type="button">migrate the orders table to a new schema</button>
+        <button type="button">build a new billing service from scratch</button>
+      </div>
+    </div>
+    <p class="note">Notice what the second example does. It reads as a small job, but it
+    touches authentication, so the lane goes up, and Sinter tells you rather than quietly
+    doing more work than you asked for.</p>
+
+    <h2>Five rules it will not bend</h2>
+    <p>No lane, setting, or instruction relaxes these. They are the reason the rest holds
+    together.</p>
+    <div class="cells cells--3 reveal">
+      <div class="cell"><span class="cell__k">01</span><div class="cell__v">Read before you write</div>
+        <p>Trace the real flow first. A small diff in the wrong place is a second bug.</p></div>
+      <div class="cell"><span class="cell__k">02</span><div class="cell__v">Cause, not symptom</div>
+        <p>Find why it happens and fix it where every caller passes through.</p></div>
+      <div class="cell"><span class="cell__k">03</span><div class="cell__v">Say what you actually did</div>
+        <p>Ran it, reviewed it, expect it to work, or assumed it: always marked.</p></div>
+      <div class="cell"><span class="cell__k">04</span><div class="cell__v">Some things never get cut</div>
+        <p>Input validation, error handling that prevents data loss, security, accessibility.</p></div>
+      <div class="cell"><span class="cell__k">05</span><div class="cell__v">Evidence before done</div>
+        <p>&ldquo;Done&rdquo; is a claim about the world. It needs output you read.</p></div>
+      <div class="cell"><span class="cell__k">&nbsp;</span><div class="cell__v"><a href="concepts.html">How it decides -> </a></div>
+        <p>Lanes, dials, the ladder, and the nine conflicts Sinter settles.</p></div>
+    </div>
+
+    <h2>What it knows</h2>
+    <div class="cells cells--3 reveal">
+      <div class="cell"><span class="cell__k">Skills</span><div class="cell__v">48</div>
+        <p>Each with an explicit trigger and an explicit non-trigger.</p></div>
+      <div class="cell"><span class="cell__k">Stack packs</span><div class="cell__v">20</div>
+        <p>Real idiom and gotchas, loaded when your stack is detected.</p></div>
+      <div class="cell"><span class="cell__k">Commands</span><div class="cell__v">15</div>
+        <p>Build, review, debug, plan, audit, comply, and the rest.</p></div>
+    </div>
+    <p>Frontend, backend, databases of every family, devops, cloud, self-hosting, networking,
+    security, cryptography, penetration testing, testing and QA, performance, load testing,
+    accessibility, SEO, analytics, mobile, ML and AI, agent engineering, media and streaming,
+    email, compliance, and product.</p>
+    <div class="slab slab--flux reveal">
+      <div class="slab__t">Any language, and it tells you how well</div>
+      <p>Twenty ecosystems have a curated pack. Everything else works immediately by deriving
+      conventions from your repository and reading the real documentation, and saying that
+      is what it is doing. Sinter never claims depth it does not have.
+      <a href="stacks.html">How coverage is tiered -> </a></p>
+    </div>
+
+    <h2>Where it comes from</h2>
+    <p><em>Sinter</em> is the metallurgical process that fuses separate particles into one
+    solid mass under heat and pressure, without melting away what each one was. The plugin
+    is built the same way.</p>
+    <p>Eight open-source methodologies each solve one part of this well. Installed together
+    they collide, three try to own how verbose your agent is, two try to own its test
+    policy, two try to own its plan format. You end up arbitrating conflicts your tools
+    should have settled. Sinter settles all nine, once, at design time.</p>
+    <figure class="hero__stage">
+      <canvas id="sinterStage" role="img"
+        aria-label="Loose particles grow and fuse into one continuous body. Eight grains remain labelled with the names of the upstream projects, separated by visible grain boundaries."></canvas>
+        <button class="replay" id="heroReplay" type="button">Replay fusion</button>
+      <noscript><img src="assets/hero-fallback.png" width="1100" height="260"
+        style="width:100%;height:auto;border:1px solid var(--boundary);border-radius:6px"
+        alt="One continuous sintered body. Eight grains labelled Superpowers, Ponytail, Caveman, Ralph, ECC, Impeccable, ClosedLoop and In-house, separated by visible grain boundaries."></noscript>
+      <figcaption class="hero__caption">Eight sources, fused into one body. The boundaries &mdash;
+      and the pores strung along them &mdash; are what a sintered section actually looks like:
+      the evidence that these were separate particles, still legible after they became one thing.
+      <a href="credits.html">Full attribution &rarr;</a></figcaption>
+    </figure>
+
+    <h2>Install</h2>
+    <pre><code>/plugin marketplace add &lt;this-repo&gt;
+/plugin install sinter
+/sinter:init</code></pre>
+    <p>Node 22 or newer. Nothing else, no Python, no jq, no extra package manager.
+    <a href="start.html">Getting started -> </a></p>
+
+    <footer class="footer">
+      <span>Apache-2.0 - derived from eight upstream projects</span>
+      <a href="credits.html">Attribution</a>
+      <a href="harnesses.html">Harness support</a>
+    </footer>
+  </main>
+</div>
+<script src="assets/sinter.js"></script>
+</body>
+</html>

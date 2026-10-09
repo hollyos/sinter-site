@@ -1,0 +1,1178 @@
+{
+ "version": "0.1.0",
+ "skills": [
+  {
+   "name": "accessibility",
+   "group": "Quality",
+   "desc": "Use when building or reviewing any user interface - web, native mobile, or desktop. Owns accessibility testing. 0); a11y is semantics, not aesthetics.",
+   "fires": "Fires on \"accessible\", \"a11y\", \"WCAG\", \"screen reader\", \"keyboard navigation\", \"contrast\", and on any component work.",
+   "neg": "",
+   "source": "Promoted from the Impeccable design lens (Apache-2.",
+   "refs": []
+  },
+  {
+   "name": "analytics-instrumentation",
+   "group": "Quality",
+   "desc": "Use when adding product analytics, event tracking, or measurement to an application.",
+   "fires": "Fires on \"track this event\", \"analytics\", \"instrumentation\", \"tracking plan\", \"PostHog\", \"GA4\", \"Segment\".",
+   "neg": "Do NOT use for systems observability - that is `observability`.",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "api-design",
+   "group": "Build",
+   "desc": "Use when designing or reviewing an HTTP, GraphQL, or RPC interface, or changing an existing one.",
+   "fires": "Fires on \"design an API\", \"REST endpoint\", \"GraphQL schema\", \"versioning\", \"should this be a POST\".",
+   "neg": "",
+   "source": "Adapted from ECC api-design (MIT) and directives by @hollyos.",
+   "refs": []
+  },
+  {
+   "name": "architecture",
+   "group": "Build",
+   "desc": "Use when designing systems, defining module boundaries, deciding where code belongs, or evaluating coupling.",
+   "fires": "Fires on \"how should I structure\", \"architecture\", \"should this be a separate service\", \"where does this belong\".",
+   "neg": "Do NOT use for single-function design.",
+   "source": "Adapted from ECC hexagonal-architecture (MIT) and directives by @hollyos.",
+   "refs": []
+  },
+  {
+   "name": "attack-surface-recon",
+   "group": "Secure",
+   "desc": "Use when mapping what an organization exposes publicly - subdomains, endpoints, storage buckets, leaked credentials, dependency provenance. Scoped to assets you own or are authorized to assess.",
+   "fires": "Fires on \"attack surface\", \"what are we exposing\", \"shadow IT\", \"exposed secrets\".",
+   "neg": "",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "authoring",
+   "group": "Surfaces",
+   "desc": "Use when writing or improving skills, agents, commands, or hooks - for Sinter or for another plugin. 0).",
+   "fires": "Fires on \"write a skill\", \"create an agent\", \"add a command\", \"plugin\".",
+   "neg": "Do NOT use for building agent products - that is `stack-packs/agent-engineering`.",
+   "source": "Merges Superpowers writing-skills and ClosedLoop platform (MIT / Apache-2.",
+   "refs": []
+  },
+  {
+   "name": "autonomy",
+   "group": "Surfaces",
+   "desc": "Use when running unattended iteration over specs or a plan. Defaults to committing locally and never pushing.",
+   "fires": "Fires on \"run the loop\", \"work through the specs\", \"keep going until done\", \"/sinter:loop\".",
+   "neg": "",
+   "source": "Adapted from Ralph Wiggum (MIT).",
+   "refs": []
+  },
+  {
+   "name": "brainstorming",
+   "group": "Plan",
+   "desc": "Use before any creative or greenfield work - new features, new components, new services - to turn an idea into an agreed design before code exists.",
+   "fires": "Fires on \"I want to build\", \"how should I approach\", \"help me design\".",
+   "neg": "Do NOT use for bug fixes or small changes to existing behavior.",
+   "source": "Adapted from Superpowers (MIT).",
+   "refs": []
+  },
+  {
+   "name": "codebase-onboarding",
+   "group": "Understand",
+   "desc": "Use when meeting an unfamiliar repository, or when the user asks how a system works, wants a walkthrough, or is joining a project. 0).",
+   "fires": "Fires on \"explain this codebase\", \"how does X work\", \"onboard me\", \"give me a tour\", \"draw the architecture\".",
+   "neg": "Do NOT use for tracing a single change - that is `understanding-first`.",
+   "source": "Merges ECC codebase-onboarding, code-tour, repo-scan and ClosedLoop mermaid-visualizer (MIT / Apache-2.",
+   "refs": []
+  },
+  {
+   "name": "compliance",
+   "group": "Review",
+   "desc": "Use when work touches a regulated framework - SOC 2, ISO 27001, ISO 42001, GDPR, HIPAA, DORA, FedRAMP, CMMC, PCI-DSS, or accessibility law. Assesses technical controls and produces evidence. Does NOT certify.",
+   "fires": "Fires on those names, on \"audit\", \"controls\", \"evidence\", and proactively when code touches PII, PHI, cardholder data, or audit logging.",
+   "neg": "",
+   "source": "Generalized from ECC hipaa-compliance (MIT).",
+   "refs": []
+  },
+  {
+   "name": "cryptography",
+   "group": "Secure",
+   "desc": "Use when handling encryption, key management, TLS, hashing, signing, or tokens. Prevents the most consequential class of self-inflicted security bug.",
+   "fires": "Fires on \"encrypt\", \"hash\", \"sign\", \"JWT\", \"TLS\", \"certificate\", \"key rotation\", \"at rest\".",
+   "neg": "",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "data-acquisition",
+   "group": "Build",
+   "desc": "Use when a project needs data from outside it - scraping, third-party APIs, bulk imports, ETL.",
+   "fires": "Fires on \"scrape\", \"pull data from\", \"import this dataset\", \"ETL\", \"crawl\".",
+   "neg": "",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "database",
+   "group": "Build",
+   "desc": "Use when designing schemas, writing or reviewing migrations, or diagnosing query behavior. Migrations are the highest-risk routine operation in software - always at least standard lane.",
+   "fires": "Fires on \"migration\", \"schema\", \"add a column\", \"this query is slow\", \"index\".",
+   "neg": "",
+   "source": "Adapted from ECC database-migrations (MIT).",
+   "refs": []
+  },
+  {
+   "name": "design",
+   "group": "Surfaces",
+   "desc": "Use when building or improving user interfaces, or when the user asks for design work - critique, polish, layout, typography, color, motion, or hardening empty and error states. 0).",
+   "fires": "Fires on \"make this look better\", \"design review\", \"UI feels off\", \"polish this\".",
+   "neg": "Do NOT use for accessibility - that is `accessibility`.",
+   "source": "Adapted from Impeccable (Apache-2.",
+   "refs": []
+  },
+  {
+   "name": "docs-lookup",
+   "group": "Understand",
+   "desc": "Use before stating how a library, framework, API, or tool behaves - versions, signatures, configuration, defaults, deprecations. Fires when the user names a framework or asks about setup or an API. Prevents recalled-from-training APIs that no longer exist.",
+   "fires": "",
+   "neg": "",
+   "source": "Adapted from ECC documentation-lookup (MIT).",
+   "refs": []
+  },
+  {
+   "name": "executing-plans",
+   "group": "Plan",
+   "desc": "Use when a written plan exists and implementation is starting. Governs phase order, gates, and state. 0).",
+   "fires": "Fires on \"execute the plan\", \"start implementation\", \"continue the plan\".",
+   "neg": "",
+   "source": "Adapted from Superpowers (MIT) and ClosedLoop (Apache-2.",
+   "refs": []
+  },
+  {
+   "name": "finishing-a-branch",
+   "group": "Ship",
+   "desc": "Use when work is complete and ready to commit, or when preparing a PR. Enforces the autonomy level.",
+   "fires": "Fires on \"commit this\", \"open a PR\", \"wrap this up\", \"ship it\".",
+   "neg": "",
+   "source": "Adapted from Superpowers (MIT).",
+   "refs": []
+  },
+  {
+   "name": "git-worktrees",
+   "group": "Ship",
+   "desc": "Use when work needs isolation from the current checkout - parallel features, risky refactors, reviewing a branch while keeping your own work.",
+   "fires": "Fires on \"worktree\", \"work on this separately\", \"without touching my branch\".",
+   "neg": "",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "inherit-legacy-style",
+   "group": "Understand",
+   "desc": "Use when working in an existing codebase whose conventions differ from mainstream idiom, especially hand-written or long-lived projects. Prevents style drift.",
+   "fires": "Fires on legacy code, unusual project structure, and when a change would introduce a pattern the codebase does not use.",
+   "neg": "",
+   "source": "Adapted from ECC (MIT).",
+   "refs": []
+  },
+  {
+   "name": "iterative-retrieval",
+   "group": "Understand",
+   "desc": "Use when a codebase is too large to read and a question needs an answer from it. 0).",
+   "fires": "Fires on searching large monorepos, \"where is X handled\", \"find all places that Y\".",
+   "neg": "",
+   "source": "Adapted from ClosedLoop (Apache-2.",
+   "refs": []
+  },
+  {
+   "name": "judges",
+   "group": "Review",
+   "desc": "Use at quality gates in full lane, or when explicitly asked to evaluate an artifact against a rubric. Eight consolidated rubrics score plans, specs, and code. 0), consolidated from 22 agents to 8.",
+   "fires": "",
+   "neg": "Do NOT use for line-by-line review - that is `review-engine`.",
+   "source": "Adapted from ClosedLoop judges (Apache-2.",
+   "refs": []
+  },
+  {
+   "name": "language-agnostic",
+   "group": "Stack",
+   "desc": "Use when working in a language or ecosystem with no curated stack pack. Fires automatically when `stack-detect` finds no match. Derives conventions from the repository and official documentation instead of curated knowledge, and says so.",
+   "fires": "",
+   "neg": "",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "load-testing",
+   "group": "Quality",
+   "desc": "Use when verifying a system holds under concurrency - load, stress, soak, or spike testing, capacity planning, or SLO validation. Distinct from `performance`, which optimizes single-request speed.",
+   "fires": "Fires on \"load test\", \"stress test\", \"how many users can we handle\", \"k6\", \"JMeter\", \"Locust\", \"capacity\".",
+   "neg": "",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "memory",
+   "group": "Surfaces",
+   "desc": "Use when capturing a durable lesson about a codebase or workflow, or when loading past learnings at session start. 0).",
+   "fires": "Fires on \"remember this\", \"note for next time\", and automatically at session start and after gate failures.",
+   "neg": "",
+   "source": "Adapted from ClosedLoop self-learning (Apache-2.",
+   "refs": []
+  },
+  {
+   "name": "modernization",
+   "group": "Ship",
+   "desc": "Use when upgrading dependencies, migrating frameworks or major versions, handling deprecations, or working on legacy code deliberately.",
+   "fires": "Fires on \"upgrade\", \"migrate to\", \"deprecated\", \"end of life\", \"modernize\", \"port this\".",
+   "neg": "Do NOT use for incidental cleanup during unrelated work - see `inherit-legacy-style`.",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "observability",
+   "group": "Ship",
+   "desc": "Use when adding logging, metrics, tracing, or alerts, or when diagnosing a production issue. For the EU regulation DORA see `compliance`, not this skill.",
+   "fires": "Fires on \"logging\", \"metrics\", \"tracing\", \"alert\", \"monitoring\", \"we can't see what happened\", \"DORA metrics\".",
+   "neg": "",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "penetration-testing",
+   "group": "Secure",
+   "desc": "Use when actively probing a system for exploitable weaknesses - authorization bypass, injection, fuzzing, OWASP Top 10 verification. Requires ownership or written authorization for the target.",
+   "fires": "Fires on \"pen test\", \"can this be exploited\", \"try to break in\".",
+   "neg": "",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "performance",
+   "group": "Quality",
+   "desc": "Use when something is slow, or when optimizing. Requires measurement before change.",
+   "fires": "Fires on \"slow\", \"optimize\", \"performance\", \"latency\", \"memory\", \"bundle size\", \"N+1\".",
+   "neg": "Do NOT use for load and stress testing - that is `load-testing`.",
+   "source": "Merges ECC react-performance, latency-critical-systems (MIT).",
+   "refs": []
+  },
+  {
+   "name": "principles",
+   "group": "Always on",
+   "desc": "The invariants and the simplicity ladder that govern every Sinter task. Use on ANY coding work - writing, fixing, refactoring, reviewing, designing, choosing a dependency. Also use when the user says \"ponytail\", \"be lazy\", \"yagni\", \"simplest thing\", \"do less\", or complains about over-engineering, bloat, or unnecessary dependencies.",
+   "fires": "",
+   "neg": "Do NOT use for non-coding requests.",
+   "source": "Adapted from Ponytail (MIT) and directives by @hollyos.",
+   "refs": [
+    "ladder"
+   ]
+  },
+  {
+   "name": "prose-register",
+   "group": "Always on",
+   "desc": "Output register and punctuation. Sets how tersely Sinter writes and which characters it types, without changing what it says. Use on every response, and when the user says \"be brief\", \"terse\", \"less tokens\", \"stop explaining\", \"no em dashes\", \"plain punctuation\", or sets /sinter:mode prose. Governs phrasing and characters only - never removes a tradeoff, a caveat, or a piece of technical substance.",
+   "fires": "",
+   "neg": "Do NOT use to decide how much code to write; that is `principles`.",
+   "source": "Adapted from Caveman (MIT).",
+   "refs": []
+  },
+  {
+   "name": "qa",
+   "group": "Quality",
+   "desc": "Use when planning what to test, triaging bugs, designing regression suites, or when a request names a test type - smoke, sanity, acceptance, integration, contract, exploratory, end-to-end, black-box, functional. Owns the test-type taxonomy.",
+   "fires": "",
+   "neg": "Do NOT use for the red-green cycle itself - that is `test-driven-development`.",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "receiving-review",
+   "group": "Review",
+   "desc": "Use when responding to review feedback - from a human, from Sinter, or from a tool.",
+   "fires": "Fires on \"address these comments\", \"the reviewer said\", \"fix the review findings\".",
+   "neg": "",
+   "source": "Adapted from Superpowers (MIT).",
+   "refs": []
+  },
+  {
+   "name": "release",
+   "group": "Ship",
+   "desc": "Use when setting up CI/CD, deploying, planning a rollout, or handling a rollback.",
+   "fires": "Fires on \"deploy\", \"release\", \"CI\", \"pipeline\", \"rollback\", \"canary\", \"feature flag\", \"ship it\".",
+   "neg": "",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "review-engine",
+   "group": "Review",
+   "desc": "Use when reviewing a diff, a pull request, or a set of changes. Partitions the diff, runs deterministic checks first, spawns specialist reviewers, verifies findings before reporting. 0).",
+   "fires": "Fires on \"review this\", \"code review\", \"look at this PR\", and automatically at phase 5 in full lane.",
+   "neg": "",
+   "source": "Adapted from ClosedLoop code-review (Apache-2.",
+   "refs": []
+  },
+  {
+   "name": "router",
+   "group": "Always on",
+   "desc": "Sinter's entry point. Use at the start of ANY software task to select a depth lane (lazy, standard, full) before doing work, and to re-check the lane when the task turns out bigger or smaller than it looked. Also fires when the user says \"sinter\", \"/build\", or asks which mode is active.",
+   "fires": "Fires on any request to write, fix, add, change, refactor, review, plan, debug, optimize, or ship code.",
+   "neg": "Do NOT use for non-software requests, or for follow-up turns inside a lane that is already set and still correct.",
+   "source": "",
+   "refs": [
+    "escalation",
+    "signals"
+   ]
+  },
+  {
+   "name": "security-review",
+   "group": "Secure",
+   "desc": "Use when writing or reviewing authentication, authorization, input handling, secrets, file uploads, payments, or any endpoint exposed to untrusted input. Fires proactively on those surfaces, not only when asked.",
+   "fires": "",
+   "neg": "Do NOT use for active exploitation - that is `penetration-testing`.",
+   "source": "Adapted from ECC security-review (MIT).",
+   "refs": []
+  },
+  {
+   "name": "simplification",
+   "group": "Build",
+   "desc": "Use after implementation is working, before review, to apply the ladder to code that already exists.",
+   "fires": "Fires on \"simplify\", \"clean this up\", \"reduce this\", \"too complex\", and automatically at phase 4 in full lane.",
+   "neg": "",
+   "source": "Adapted from Ponytail (MIT).",
+   "refs": []
+  },
+  {
+   "name": "stack-detect",
+   "group": "Stack",
+   "desc": "Use at the start of work in a repository to identify its stack and load the matching packs. Fires at session start, on `/sinter:init`, and when work moves into an unfamiliar part of a repository. Falls back to `language-agnostic` when no pack matches.",
+   "fires": "",
+   "neg": "",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "subagent-dispatch",
+   "group": "Plan",
+   "desc": "Use when work can be split across parallel agents, or when a task needs a fresh context window.",
+   "fires": "Fires on multi-file review, independent plan tasks, and large refactors.",
+   "neg": "Do NOT use for work with sequential dependencies.",
+   "source": "Adapted from Superpowers (MIT).",
+   "refs": []
+  },
+  {
+   "name": "systematic-debugging",
+   "group": "Build",
+   "desc": "Use when encountering any bug, test failure, crash, or unexpected behavior, BEFORE proposing a fix.",
+   "fires": "Fires on \"it's broken\", \"this fails\", \"why doesn't this work\", stack traces, error messages, flaky tests, and performance regressions.",
+   "neg": "Do NOT use for feature work with no defect involved.",
+   "source": "Adapted from Superpowers (MIT), Ponytail (MIT), and directives by @hollyos.",
+   "refs": []
+  },
+  {
+   "name": "technical-influence",
+   "group": "Write it down",
+   "desc": "Use when a technical decision needs buy-in - RFCs, migration proposals, making the case for paying down debt, incident communication, or explaining a tradeoff to non-engineers.",
+   "fires": "Fires on \"write an RFC\", \"convince\", \"how do I justify\", \"explain to leadership\", \"postmortem\".",
+   "neg": "",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "technical-seo",
+   "group": "Quality",
+   "desc": "Use when building or reviewing web pages that need to be discoverable - marketing sites, docs, e-commerce, public content. Technical SEO only; content strategy is `stack-packs/product`.",
+   "fires": "Fires on \"SEO\", \"meta tags\", \"sitemap\", \"structured data\", \"canonical\", \"why isn't this indexed\", \"Core Web Vitals\".",
+   "neg": "",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "test-driven-development",
+   "group": "Build",
+   "desc": "Use when implementing any feature or bugfix, before writing implementation code. Governs test policy across all lanes.",
+   "fires": "Fires on \"write a test\", \"add tests\", \"TDD\", and on any implementation request in standard or full lane.",
+   "neg": "Do NOT use to decide WHICH kind of test to write - see `qa` for the test-type taxonomy.",
+   "source": "Adapted from Superpowers (MIT), with lane-bound relaxation.",
+   "refs": []
+  },
+  {
+   "name": "understanding-first",
+   "group": "Understand",
+   "desc": "Use before editing any code you did not just write. Traces the real flow, finds every caller, and identifies what a change will touch. Enforces invariant 1.",
+   "fires": "Fires on any modification request against existing code.",
+   "neg": "Do NOT use for greenfield files with no callers.",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "verification-before-completion",
+   "group": "Ship",
+   "desc": "Use before claiming any work is complete, fixed, passing, or done, and before committing, pushing, or opening a PR. Requires fresh evidence for every claim.",
+   "fires": "Fires on \"done\", \"fixed\", \"works now\", \"tests pass\", \"ready to ship\".",
+   "neg": "",
+   "source": "Adapted from Superpowers (MIT).",
+   "refs": []
+  },
+  {
+   "name": "writing-docs",
+   "group": "Write it down",
+   "desc": "Use when writing READMEs, API documentation, changelogs, ADRs, runbooks, or code comments.",
+   "fires": "Fires on \"document this\", \"write a README\", \"changelog\", \"ADR\", \"explain this for the docs\".",
+   "neg": "",
+   "source": "",
+   "refs": []
+  },
+  {
+   "name": "writing-plans",
+   "group": "Plan",
+   "desc": "Use when work needs a plan before implementation - full lane, multi-phase work, or when the user says \"plan this\". Produces plan.json (canonical, gated) and PLAN.md (human-readable, editable), which round-trip. 0).",
+   "fires": "",
+   "neg": "",
+   "source": "Adapted from Superpowers (MIT) and ClosedLoop (Apache-2.",
+   "refs": []
+  },
+  {
+   "name": "writing-specs",
+   "group": "Plan",
+   "desc": "Use when turning an agreed design into testable acceptance criteria, or when the user provides a PRD, spec, or requirements document. Produces the input the plan and the judges verify against.",
+   "fires": "Fires on \"write the spec\", \"acceptance criteria\", \"requirements\".",
+   "neg": "",
+   "source": "",
+   "refs": []
+  }
+ ],
+ "commands": [
+  {
+   "name": "amend",
+   "desc": "Modify an approved plan through conversation.",
+   "args": "<what changed>",
+   "body": "# /sinter:amend\n\nLoad `plan.json`. Apply the change through `writing-plans` conventions.\nRegenerate `PLAN.md`. Preserve completed-task state.\n\nRe-run `judges` on `grounding` and `completeness` if the change is structural.\n\nReport what moved, what was added, what was dropped."
+  },
+  {
+   "name": "audit",
+   "desc": "Simplification, dead code, and technical debt.",
+   "args": "[--scope <path>] [--debt|--dead|--simplify]",
+   "body": "# /sinter:audit\n\nRoute to `simplification` for working code.\n\n- `--simplify` (default) - apply the ladder to existing code\n- `--dead` - unreferenced exports, unreachable branches, unused dependencies\n- `--debt` - inventory with cost framing for `technical-influence`\n\nBehavior-preserving. Anything that changes behavior is a separate change with\nits own tests. Invariant 4 binds - validation, error handling, security, and\naccessibility are not removable."
+  },
+  {
+   "name": "build",
+   "desc": "Main entry. Implement, fix, or change code. Routes by depth lane.",
+   "args": "[--lane lazy|standard|full] <what to build>",
+   "body": "# /sinter:build\n\nRoute to `router` first. It selects the lane and states it in one line.\n\nThen, per lane:\n\n- **lazy** - `understanding-first`, then `principles` ladder. One runnable\n  check if the logic is non-trivial.\n- **standard** - `understanding-first`, `test-driven-development` (red/green),\n  `principles` correctness bar. State tradeoffs.\n- **full** - hand off to `/sinter:plan`. Do not implement before the gate.\n\nLoad stack packs via `stack-detect`. If no pack matches, `language-agnostic`\nand say which tier.\n\n`--lane` overrides inference. Escalation rules in `router` still apply and\nstill announce themselves."
+  },
+  {
+   "name": "comply",
+   "desc": "Assess technical controls against a framework and export evidence.",
+   "args": "<framework...> [--evidence]",
+   "body": "# /sinter:comply\n\nRoute to `compliance`.\n\nFrameworks: soc2, iso27001, iso42001, gdpr, hipaa, dora, fedramp, cmmc, pci.\n\n1. Retrieve current control text (`docs-lookup`) - never assess from memory\n2. Run `scripts/assess.mjs` deterministic checks\n3. Map results through `controls/crosswalk.json`\n4. Report per control: met, gap, needs-human-evidence, or not-assessable\n\n`--evidence` exports the artifact bundle.\n\n**Every report states the boundary: Sinter assesses, it does not certify.** A\ncontrol is never `met` on inference."
+  },
+  {
+   "name": "debug",
+   "desc": "Systematic debugging. Root cause before any fix.",
+   "args": "<symptom or error>",
+   "body": "# /sinter:debug\n\nRoute to `systematic-debugging`. All four phases, in order.\n\nDo not propose a fix before phase 1 produces a one-sentence mechanism\nstatement. If the root cause lands in a shared function, `router` escalates -\nsay so."
+  },
+  {
+   "name": "design",
+   "desc": "Frontend design work - critique, polish, layout, motion, hardening.",
+   "args": "<lens> [target]",
+   "body": "# /sinter:design\n\nRoute to `design`. Lens is one of: critique, polish, distill, bolder, quieter,\nlayout, typeset, colorize, animate, harden, delight.\n\nReads `PRODUCT.md` and `DESIGN.md` if present; asks audience and brand-vs-product\nif not.\n\nRuns `scripts/detectors.mjs` first - deterministic, no model.\n\nAccessibility findings route to `accessibility` and are not styling\npreferences."
+  },
+  {
+   "name": "fix",
+   "desc": "Act on findings from a prior review.",
+   "args": "[--severity blocking|high|medium|all]",
+   "body": "# /sinter:fix\n\nLoad findings from the last `review-engine` run.\n\nVerify each finding still applies before acting on it - the code may have\nchanged. Fix in severity order. Each fix follows the lane's test policy.\n\nRe-run `verification-before-completion` before reporting. Report what was\nfixed, what was deliberately not, and why."
+  },
+  {
+   "name": "help",
+   "desc": "What Sinter can do, and when each part fires.",
+   "args": "[skill or topic]",
+   "body": "# /sinter:help\n\nNo arguments: the command surface, the current lane and dials, and the loaded\nstack packs.\n\nWith an argument: what that skill does, when it fires, and what it explicitly\ndoes not cover.\n\nWith ~48 skills, this is not a nicety - a capability nobody can find is a\ncapability that does not exist."
+  },
+  {
+   "name": "init",
+   "desc": "Bootstrap Sinter in a repository.",
+   "args": "[--scaffold-pack] [--design]",
+   "body": "# /sinter:init\n\n1. `stack-detect` - identify ecosystems per workspace\n2. `codebase-onboarding` - architecture map, conventions, entry points\n3. Write `sinter.config.json` with detected defaults\n4. Write or update `CLAUDE.md` / `AGENTS.md` with project conventions\n5. `--design` also writes `PRODUCT.md` and `DESIGN.md` (`design`)\n6. `--scaffold-pack` writes a tier-3 pack to `.sinter/packs/` for an ecosystem\n   with no curated pack\n\nIdempotent. Re-running updates rather than duplicating."
+  },
+  {
+   "name": "learn",
+   "desc": "Capture, review, or prune learnings.",
+   "args": "[capture <text> | list | prune | scope <none|project|user|team>]",
+   "body": "# /sinter:learn\n\nRoute to `memory`.\n\n`capture` applies the four-part quality bar before writing - durable,\nnon-obvious, actionable, specific. Rejections say which test failed.\n\n`prune` removes stale, contradicted, never-triggered, and duplicate entries.\nRun it periodically; an unpruned store silently degrades every session."
+  },
+  {
+   "name": "loop",
+   "desc": "Run unattended iteration over specs or a plan.",
+   "args": "[--level propose|commit|autonomous] [--max <n>]",
+   "body": "# /sinter:loop\n\nRoute to `autonomy`.\n\nDefault level `commit` - commits locally, never pushes. `--level` overrides\nfor this run only; persist it in `sinter.config.json` if it should stick.\n\n`autonomous` requires an explicit branch target and will refuse without one.\n\nRuns in a worktree at `commit` and `autonomous`. Halts on the conditions in\n`autonomy`. Rails in `hooks/pre-tool-use.sh` bind at every level."
+  },
+  {
+   "name": "mode",
+   "desc": "Set lane, dials, and autonomy level.",
+   "args": "[lane auto|lazy|standard|full] [build lite|full|ultra] [prose normal|tight|terse] [autonomy propose|commit|autonomous]",
+   "body": "# /sinter:mode\n\nNo arguments: report the current settings and where each came from\n(inline, session, project config, user config, or default).\n\nSession-scoped unless written to `sinter.config.json`.\n\nResolution order:\n`inline flag > session /mode > ./sinter.config.json > ~/.sinter/config.json > defaults`"
+  },
+  {
+   "name": "plan",
+   "desc": "Write an implementation plan. Full lane. Stops at the human gate.",
+   "args": "[--from <spec|PRD path>]",
+   "body": "# /sinter:plan\n\n1. `understanding-first`, and `codebase-onboarding` if the repo is unfamiliar\n2. `writing-specs` if acceptance criteria do not exist yet\n3. `writing-plans` - produces `plan.json` and `PLAN.md`\n4. `judges` on `spec-quality` and `grounding`\n5. **Stop.** Present the plan. Wait for approval.\n\nDo not implement. The gate is the point of this command."
+  },
+  {
+   "name": "review",
+   "desc": "Multi-agent code review of a diff or PR.",
+   "args": "[--depth shallow|deep] [--pr <n>] [--since <ref>]",
+   "body": "# /sinter:review\n\nRoute to `review-engine`.\n\nDefault scope: uncommitted changes, then the current branch against its base.\n`--since` overrides. `--pr` fetches the PR diff and posts inline comments.\n\n`--depth shallow` runs hygiene and the correctness reviewer only. `deep` adds\ncross-file, security, tests, and conventions reviewers.\n\nIf any changed file touches a controlled surface, `compliance` runs in\ncontinuous mode and its findings are included."
+  },
+  {
+   "name": "stats",
+   "desc": "Token and cost attribution for this session.",
+   "args": "[--by skill|agent|phase]",
+   "body": "# /sinter:stats\n\nReads the session transcript. Reports tokens and estimated cost by skill,\nagent, or phase.\n\nUseful for tuning `judges.routing` and finding a reviewer fleet that costs\nmore than it returns."
+  }
+ ],
+ "packs": [
+  {
+   "name": "agent-engineering",
+   "covers": "Building agent products - architecture, evals, orchestration, observability",
+   "detect": "Model SDK imports, agent frameworks, prompt directories",
+   "sections": [
+    "Architecture",
+    "Evaluation",
+    "Orchestration",
+    "Observability",
+    "Security",
+    "Cost"
+   ]
+  },
+  {
+   "name": "cloud",
+   "covers": "AWS, GCP, Azure, Cloudflare, IAM, IaC",
+   "detect": "`*.tf`, `serverless.yml`, `wrangler.toml`, SDK imports",
+   "sections": [
+    "IAM first",
+    "Storage",
+    "Networking",
+    "Serverless",
+    "IaC",
+    "Cost"
+   ]
+  },
+  {
+   "name": "comms",
+   "covers": "Transactional email, SMS, push, webhooks",
+   "detect": "SES/SendGrid/Postmark/Resend SDKs, Twilio, FCM/APNs",
+   "sections": [
+    "Email deliverability",
+    "Handle the feedback loop",
+    "Content",
+    "SMS and push",
+    "Webhooks"
+   ]
+  },
+  {
+   "name": "cpp",
+   "covers": "C++",
+   "detect": "`CMakeLists.txt`, `conanfile.*`, `vcpkg.json`",
+   "sections": [
+    "Modern C++",
+    "Safety",
+    "Build",
+    "Testing"
+   ]
+  },
+  {
+   "name": "data-stores",
+   "covers": "Relational, document, key-value, wide-column, graph, vector, time-series, search",
+   "detect": "Connection strings, ORM config, docker-compose services",
+   "sections": [
+    "Choose the family before the product",
+    "Cross-cutting",
+    "Vector specifics"
+   ]
+  },
+  {
+   "name": "dotnet",
+   "covers": ".NET, C#, F#",
+   "detect": "`*.csproj`, `*.fsproj`, `*.sln`, `global.json`",
+   "sections": [
+    "C#",
+    "Async",
+    "DI and configuration",
+    "EF Core",
+    "Testing"
+   ]
+  },
+  {
+   "name": "frontend-other",
+   "covers": "Vue, Nuxt, Angular, Svelte",
+   "detect": "`vue.config.*`, `nuxt.config.*`, `angular.json`, `svelte.config.js`",
+   "sections": [
+    "Vue / Nuxt",
+    "Angular",
+    "Svelte",
+    "Shared"
+   ]
+  },
+  {
+   "name": "go",
+   "covers": "Go",
+   "detect": "`go.mod`, `go.sum`",
+   "sections": [
+    "Language",
+    "Concurrency",
+    "Structure",
+    "Testing",
+    "Performance"
+   ]
+  },
+  {
+   "name": "infra",
+   "covers": "Docker, Kubernetes, CI",
+   "detect": "`Dockerfile`, `compose.y*ml`, `*.k8s.yaml`, `.github/workflows`",
+   "sections": [
+    "Containers",
+    "Kubernetes",
+    "CI"
+   ]
+  },
+  {
+   "name": "jvm",
+   "covers": "Java, Kotlin, Spring Boot, Quarkus, Ktor",
+   "detect": "`pom.xml`, `build.gradle*`, `application.properties`",
+   "sections": [
+    "Kotlin",
+    "Java",
+    "Spring Boot",
+    "Quarkus",
+    "Persistence",
+    "Testing"
+   ]
+  },
+  {
+   "name": "media",
+   "covers": "Images, transforms, video on demand, live streaming, WebRTC, CDN",
+   "detect": "ffmpeg usage, image CDN config, WebRTC imports, HLS manifests",
+   "sections": [
+    "Images",
+    "Uploads",
+    "Video on demand",
+    "Live streaming",
+    "Real-time calls",
+    "Delivery"
+   ]
+  },
+  {
+   "name": "ml-ai",
+   "covers": "PyTorch, training, evaluation, LLM pipelines, RAG, inference",
+   "detect": "`requirements.txt` with torch/transformers, `*.ipynb`, model config",
+   "sections": [
+    "Reproducibility",
+    "Data",
+    "Training",
+    "Evaluation",
+    "RAG",
+    "Inference",
+    "LLM pipelines"
+   ]
+  },
+  {
+   "name": "mobile",
+   "covers": "iOS/Swift, Android/Kotlin, Flutter, Compose Multiplatform",
+   "detect": "`Package.swift`, `*.xcodeproj`, `build.gradle` with android plugin, `pubspec.yaml`",
+   "sections": [
+    "Cross-cutting",
+    "Swift / SwiftUI",
+    "Android / Compose",
+    "Flutter",
+    "Release"
+   ]
+  },
+  {
+   "name": "networking",
+   "covers": "VLANs, DNS, VPN, BGP, device config",
+   "detect": "Router/switch configs, `*.cfg`, netmiko or napalm imports",
+   "sections": [
+    "Segmentation",
+    "DNS",
+    "VPN",
+    "BGP",
+    "Device configuration"
+   ]
+  },
+  {
+   "name": "php",
+   "covers": "PHP, Laravel",
+   "detect": "`composer.json`, `artisan`",
+   "sections": [
+    "Language",
+    "Laravel",
+    "Security",
+    "Testing"
+   ]
+  },
+  {
+   "name": "product",
+   "covers": "Discovery, validation, positioning, content, launch, fundraising",
+   "detect": "Loaded on request, not by detection",
+   "sections": [
+    "Discovery - validate before building",
+    "Positioning",
+    "Content",
+    "Launch",
+    "Fundraising"
+   ]
+  },
+  {
+   "name": "python",
+   "covers": "Python, Django, FastAPI, packaging",
+   "detect": "`pyproject.toml`, `requirements.txt`, `manage.py`, `uv.lock`, `poetry.lock`",
+   "sections": [
+    "Language",
+    "Packaging",
+    "Django",
+    "FastAPI",
+    "Testing"
+   ]
+  },
+  {
+   "name": "rust",
+   "covers": "Rust",
+   "detect": "`Cargo.toml`, `Cargo.lock`",
+   "sections": [
+    "Language",
+    "Types",
+    "Async",
+    "Unsafe",
+    "Testing"
+   ]
+  },
+  {
+   "name": "self-hosting",
+   "covers": "Servers, NAS, home lab, bare metal",
+   "detect": "systemd units, `docker-compose.yml` on a host, ZFS config",
+   "sections": [
+    "Servers",
+    "Storage",
+    "Backups",
+    "Reverse proxy",
+    "Monitoring"
+   ]
+  },
+  {
+   "name": "typescript-react",
+   "covers": "TypeScript, React, Next.js, React Native, Expo",
+   "detect": "package.json with `react`; `next.config.*`; `tsconfig.json`; `app.json` + `expo`",
+   "sections": [
+    "Types",
+    "React",
+    "Next.js",
+    "React Native / Expo",
+    "Testing",
+    "Tooling"
+   ]
+  }
+ ],
+ "agents": [
+  {
+   "name": "build-doctor",
+   "desc": "Diagnoses and fixes build, compile, and dependency failures.",
+   "tools": "Read, Write, Edit, Bash, Grep, Glob"
+  },
+  {
+   "name": "compliance-assessor",
+   "desc": "Control-by-control gap assessment.",
+   "tools": "Read, Grep, Glob, Bash"
+  },
+  {
+   "name": "design-critic",
+   "desc": "Design critique against hierarchy, clarity, and the anti-pattern set.",
+   "tools": "Read, Grep, Glob"
+  },
+  {
+   "name": "docs-researcher",
+   "desc": "Retrieves authoritative documentation for a pinned version.",
+   "tools": "Read, Grep, Glob, WebFetch"
+  },
+  {
+   "name": "e2e-runner",
+   "desc": "Runs browser-level verification when tooling is available.",
+   "tools": "Read, Bash, Grep, Glob"
+  },
+  {
+   "name": "explorer",
+   "desc": "Read-only codebase reconnaissance. Traces flows and finds callers.",
+   "tools": "Read, Grep, Glob"
+  },
+  {
+   "name": "finding-verifier",
+   "desc": "Verifies review findings before they reach the user.",
+   "tools": "Read, Grep, Glob"
+  },
+  {
+   "name": "implementer",
+   "desc": "Executes one plan task under the lane's test policy.",
+   "tools": "Read, Write, Edit, Bash, Grep, Glob"
+  },
+  {
+   "name": "learning-capture",
+   "desc": "Extracts durable learnings from a session.",
+   "tools": "Read, Write, Grep, Glob"
+  },
+  {
+   "name": "migration-planner",
+   "desc": "Sequences dependency and framework upgrades.",
+   "tools": "Read, Grep, Glob, WebFetch"
+  },
+  {
+   "name": "onboarding-guide",
+   "desc": "Produces a repository architecture map and code tour.",
+   "tools": "Read, Grep, Glob"
+  },
+  {
+   "name": "perf-analyst",
+   "desc": "Profiles before recommending any optimization.",
+   "tools": "Read, Bash, Grep, Glob"
+  },
+  {
+   "name": "plan-critic",
+   "desc": "Reviews a plan for gaps, ordering errors, and ungrounded assumptions.",
+   "tools": "Read, Grep, Glob"
+  },
+  {
+   "name": "planner",
+   "desc": "Turns a spec into a task-decomposed plan.",
+   "tools": "Read, Grep, Glob, Write"
+  },
+  {
+   "name": "reviewer-general",
+   "desc": "Correctness review of a diff partition.",
+   "tools": "Read, Grep, Glob"
+  },
+  {
+   "name": "reviewer-graph",
+   "desc": "Cross-file impact review.",
+   "tools": "Read, Grep, Glob"
+  },
+  {
+   "name": "reviewer-security",
+   "desc": "Security review of changed lines.",
+   "tools": "Read, Grep, Glob"
+  },
+  {
+   "name": "reviewer-tests",
+   "desc": "Reviews test coverage and quality for a change.",
+   "tools": "Read, Grep, Glob"
+  },
+  {
+   "name": "security-auditor",
+   "desc": "Proactive security audit of a surface, not a diff.",
+   "tools": "Read, Grep, Glob"
+  },
+  {
+   "name": "simplifier",
+   "desc": "Applies the ladder to working code.",
+   "tools": "Read, Write, Edit, Bash, Grep, Glob"
+  },
+  {
+   "name": "verifier",
+   "desc": "Verifies behavior against acceptance criteria.",
+   "tools": "Read, Bash, Grep, Glob"
+  }
+ ],
+ "controls": [
+  {
+   "id": "ACC-001",
+   "title": "Unique identification of users",
+   "check": "No shared or generic accounts in the identity provider or application user table",
+   "assessable": true,
+   "map": {
+    "soc2": [
+     "CC6.1"
+    ],
+    "iso27001": [
+     "A.5.16"
+    ],
+    "hipaa": [
+     "164.312(a)(2)(i)"
+    ],
+    "nist80053": [
+     "IA-2"
+    ],
+    "cmmc": [
+     "IA.L1-3.5.1"
+    ],
+    "pci": [
+     "8.2"
+    ]
+   }
+  },
+  {
+   "id": "ACC-002",
+   "title": "Least privilege authorization",
+   "check": "Every endpoint authorizes at the resource; no client-supplied role or tenant is trusted",
+   "assessable": true,
+   "map": {
+    "soc2": [
+     "CC6.3"
+    ],
+    "iso27001": [
+     "A.5.15"
+    ],
+    "hipaa": [
+     "164.312(a)(1)"
+    ],
+    "nist80053": [
+     "AC-6"
+    ],
+    "cmmc": [
+     "AC.L2-3.1.5"
+    ],
+    "dora": [
+     "Art.9"
+    ]
+   }
+  },
+  {
+   "id": "CRY-001",
+   "title": "Encryption in transit",
+   "check": "TLS 1.2 minimum on all external listeners; certificate verification enabled",
+   "assessable": true,
+   "map": {
+    "soc2": [
+     "CC6.7"
+    ],
+    "iso27001": [
+     "A.8.24"
+    ],
+    "hipaa": [
+     "164.312(e)(1)"
+    ],
+    "nist80053": [
+     "SC-8"
+    ],
+    "pci": [
+     "4.1"
+    ],
+    "fedramp": [
+     "SC-8"
+    ]
+   }
+  },
+  {
+   "id": "CRY-002",
+   "title": "Encryption at rest",
+   "check": "Data stores encrypted; keys managed outside the data store",
+   "assessable": true,
+   "map": {
+    "soc2": [
+     "CC6.7"
+    ],
+    "iso27001": [
+     "A.8.24"
+    ],
+    "hipaa": [
+     "164.312(a)(2)(iv)"
+    ],
+    "nist80053": [
+     "SC-28"
+    ],
+    "pci": [
+     "3.4"
+    ]
+   }
+  },
+  {
+   "id": "LOG-001",
+   "title": "Audit logging of security events",
+   "check": "Authentication, authorization failure, and privileged action are logged with actor, action, and timestamp",
+   "assessable": true,
+   "map": {
+    "soc2": [
+     "CC7.2"
+    ],
+    "iso27001": [
+     "A.8.15"
+    ],
+    "hipaa": [
+     "164.312(b)"
+    ],
+    "nist80053": [
+     "AU-2"
+    ],
+    "cmmc": [
+     "AU.L2-3.3.1"
+    ],
+    "dora": [
+     "Art.10"
+    ]
+   }
+  },
+  {
+   "id": "LOG-002",
+   "title": "Log integrity and retention",
+   "check": "Audit logs are append-only or tamper-evident and retained per policy",
+   "assessable": true,
+   "map": {
+    "soc2": [
+     "CC7.2"
+    ],
+    "iso27001": [
+     "A.8.15"
+    ],
+    "nist80053": [
+     "AU-9"
+    ],
+    "fedramp": [
+     "AU-9"
+    ]
+   }
+  },
+  {
+   "id": "CHG-001",
+   "title": "Change management",
+   "check": "Changes are peer-reviewed and traceable to an approved request",
+   "assessable": true,
+   "map": {
+    "soc2": [
+     "CC8.1"
+    ],
+    "iso27001": [
+     "A.8.32"
+    ],
+    "nist80053": [
+     "CM-3"
+    ],
+    "dora": [
+     "Art.9"
+    ]
+   }
+  },
+  {
+   "id": "VUL-001",
+   "title": "Dependency vulnerability management",
+   "check": "Dependency audit runs in CI; lockfile committed; known-critical advisories fail the build",
+   "assessable": true,
+   "map": {
+    "soc2": [
+     "CC7.1"
+    ],
+    "iso27001": [
+     "A.8.8"
+    ],
+    "nist80053": [
+     "RA-5"
+    ],
+    "cmmc": [
+     "RA.L2-3.11.2"
+    ],
+    "fedramp": [
+     "RA-5"
+    ]
+   }
+  },
+  {
+   "id": "BCP-001",
+   "title": "Backup and restore",
+   "check": "Backups exist, are encrypted, and a restore has been executed and recorded",
+   "assessable": false,
+   "map": {
+    "soc2": [
+     "A1.2"
+    ],
+    "iso27001": [
+     "A.8.13"
+    ],
+    "hipaa": [
+     "164.308(a)(7)"
+    ],
+    "dora": [
+     "Art.12"
+    ]
+   },
+   "note": "Backup configuration is checkable; a rehearsed restore requires human evidence"
+  },
+  {
+   "id": "PRV-001",
+   "title": "Data subject rights",
+   "check": "Access, export, and deletion paths exist and are exercised end to end",
+   "assessable": true,
+   "map": {
+    "gdpr": [
+     "Art.15",
+     "Art.17",
+     "Art.20"
+    ],
+    "ccpa": [
+     "1798.105",
+     "1798.110"
+    ],
+    "iso27001": [
+     "A.5.34"
+    ]
+   }
+  },
+  {
+   "id": "PRV-002",
+   "title": "Data minimization and retention",
+   "check": "Retention configured per data class; no unbounded PII retention",
+   "assessable": true,
+   "map": {
+    "gdpr": [
+     "Art.5(1)(c)",
+     "Art.5(1)(e)"
+    ],
+    "hipaa": [
+     "164.502(b)"
+    ],
+    "iso27001": [
+     "A.5.33"
+    ]
+   }
+  },
+  {
+   "id": "AI-001",
+   "title": "AI system impact assessment",
+   "check": "Deployed model or agent has a recorded impact assessment and documented data provenance",
+   "assessable": false,
+   "map": {
+    "iso42001": [
+     "A.5.2",
+     "A.6.1"
+    ]
+   },
+   "note": "Provenance records are checkable; the assessment itself requires human sign-off"
+  },
+  {
+   "id": "RES-001",
+   "title": "Operational resilience testing",
+   "check": "Failure modes exercised; recovery objectives measured against a test",
+   "assessable": true,
+   "map": {
+    "dora": [
+     "Art.24",
+     "Art.25"
+    ],
+    "soc2": [
+     "A1.3"
+    ],
+    "iso27001": [
+     "A.5.30"
+    ]
+   }
+  }
+ ],
+ "groups": [
+  "Always on",
+  "Understand",
+  "Plan",
+  "Build",
+  "Quality",
+  "Secure",
+  "Ship",
+  "Review",
+  "Write it down",
+  "Surfaces",
+  "Stack"
+ ]
+}
