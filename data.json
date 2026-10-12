@@ -74,6 +74,15 @@
    "refs": []
   },
   {
+   "name": "clarify",
+   "group": "Always on",
+   "desc": "Use at the very start of a task when the request is too thin to act on safely - a few words, a vague goal, an ambiguous pronoun, or a known unknown that changes the implementation. Resolve intent before the router picks a lane. Prefer inferring from context; ask only when a wrong guess is expensive to undo.",
+   "fires": "Fires on \"fix the thing\", \"make it better\", \"add that\", \"it's broken\", and any request whose success criteria you cannot state back.",
+   "neg": "Do NOT use when the request is already specific, or for design exploration of a feature that clearly needs building - that is `brainstorming`.",
+   "source": "",
+   "refs": []
+  },
+  {
    "name": "codebase-onboarding",
    "group": "Understand",
    "desc": "Use when meeting an unfamiliar repository, or when the user asks how a system works, wants a walkthrough, or is joining a project. 0).",
@@ -313,7 +322,7 @@
    "name": "router",
    "group": "Always on",
    "desc": "Sinter's entry point. Use at the start of ANY software task to select a depth lane (lazy, standard, full) before doing work, and to re-check the lane when the task turns out bigger or smaller than it looked. Also fires when the user says \"sinter\", \"/build\", or asks which mode is active.",
-   "fires": "Fires on any request to write, fix, add, change, refactor, review, plan, debug, optimize, or ship code.",
+   "fires": "Fires on any request to write, fix, add, change, refactor, review, plan, debug, optimize, or ship code, including a thin or vague one - it routes through `clarify` first when the request is too unclear to lane.",
    "neg": "Do NOT use for non-software requests, or for follow-up turns inside a lane that is already set and still correct.",
    "source": "",
    "refs": [
@@ -328,6 +337,15 @@
    "fires": "",
    "neg": "Do NOT use for active exploitation - that is `penetration-testing`.",
    "source": "Adapted from ECC security-review (MIT).",
+   "refs": []
+  },
+  {
+   "name": "self-improvement",
+   "group": "Surfaces",
+   "desc": "Use to turn recurring patterns in captured learnings into concrete, reviewable improvement proposals - a skill edit, a new project convention, a pack rule. It only ever PROPOSES. A human reviews and merges. Reworks the capture/learn loop from ClosedLoop self-learning (Apache-2.0) into a propose-only cycle.",
+   "fires": "Fires on \"what could be better\", \"any patterns\", \"improve yourself\", \"/sinter:improve\", and runs opportunistically when `memory` captures a learning that echoes earlier ones.",
+   "neg": "Do NOT use to apply changes to skills, config, or instructions automatically - see \"The boundary\" below.",
+   "source": "",
    "refs": []
   },
   {
@@ -487,6 +505,12 @@
    "desc": "What Sinter can do, and when each part fires.",
    "args": "[skill or topic]",
    "body": "# /sinter:help\n\nNo arguments: the command surface, the current lane and dials, and the loaded\nstack packs.\n\nWith an argument: what that skill does, when it fires, and what it explicitly\ndoes not cover.\n\nWith ~48 skills, this is not a nicety - a capability nobody can find is a\ncapability that does not exist."
+  },
+  {
+   "name": "improve",
+   "desc": "Review improvement proposals Sinter has drafted from recurring patterns.",
+   "args": "[list | show <n> | accept <n> | reject <n> | defer <n>]",
+   "body": "# /sinter:improve\n\nRoute to `self-improvement`.\n\n- `list` (default) - open proposals, newest first, with the pattern, the\n  recurrence count, and a one-line summary of the change.\n- `show <n>` - the full proposal: the pattern, the diff, and the learnings that\n  evidence it.\n- `accept <n>` - apply the reviewed diff through the normal flow, committing at\n  the configured autonomy level.\n- `reject <n>` - drop it; not re-proposed unless substantially new evidence\n  appears.\n- `defer <n>` - keep it open, do not surface it again this session.\n\nSinter only proposes. Accepting is the human review step, and it is the only\nway a proposal becomes a change. See `self-improvement` for why the boundary\nis where it is."
   },
   {
    "name": "init",
