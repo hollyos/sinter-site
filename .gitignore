@@ -1,0 +1,5 @@
+node_modules/
+.sinter/live/
+.sinter/cache/
+*.log
+.DS_Store

@@ -21,7 +21,7 @@
   <nav class="topbar__links" aria-label="Primary">
 <a href="start.html">Start</a><a href="concepts.html">Concepts</a><a href="commands.html">Commands</a><a href="skills.html">Skills</a></nav></header>
 <p id="themeStatus" class="visually-hidden" role="status" aria-live="polite"></p>
-<div class="shell"><nav class="rail" id="rail" aria-label="Documentation"><div class="rail__group">Start</div><a href="index.html">Overview</a><a href="start.html">Getting started</a><a href="concepts.html">Core concepts</a><div class="rail__group">Reference</div><a href="commands.html">Commands</a><a href="skills.html">Skills</a><a href="stacks.html">Stacks &amp; languages</a><a href="agents.html">Agents</a><div class="rail__group">Operating</div><a href="autonomy.html">Autonomy &amp; safety</a><a href="compliance.html">Compliance</a><a href="config.html">Configuration</a><div class="rail__group">Project</div><a href="harnesses.html">Harnesses</a><a href="credits.html">Attribution</a></nav><main id="content" tabindex="-1">
+<div class="shell"><nav class="rail" id="rail" aria-label="Documentation"><div class="rail__group">Start</div><a href="index.html">Overview</a><a href="start.html">Getting started</a><a href="concepts.html">Core concepts</a><div class="rail__group">Reference</div><a href="commands.html">Commands</a><a href="skills.html">Skills</a><a href="modules.html">Modules</a><a href="stacks.html">Stacks &amp; languages</a><a href="agents.html">Agents</a><div class="rail__group">Operating</div><a href="autonomy.html">Autonomy &amp; safety</a><a href="accessibility.html">Accessibility</a><a href="compliance.html">Compliance</a><a href="config.html">Configuration</a><div class="rail__group">Project</div><a href="harnesses.html">Harnesses</a><a href="credits.html">Attribution</a></nav><main id="content" tabindex="-1">
     <span class="eyebrow">Operating</span>
     <h1>Autonomy &amp; safety</h1>
     <p class="lede">Fresh context each iteration, state on disk, one task at a time, evidence
@@ -34,8 +34,8 @@
     <code>autonomous</code> requires an explicit branch target and refuses to infer one.</p>
 
     <h2>Rails, enforced at every level</h2>
-    <p>These bind regardless of level: including <code>propose</code>. They are enforced in
-    <code>hooks/pre-tool-use.sh</code>, not by good intentions.</p>
+    <p>These bind regardless of level: including <code>propose</code>. They are carried as instructions in the <code>autonomy</code> skill; for
+    deterministic script-level enforcement, add the opt-in hooks in <code>hardening/</code>.</p>
     <div class="cells cells--3 reveal"><div class="cell"><span class="cell__k">Blocked</span><div class="cell__v">Force push</div><p>Any force push or force refspec, on any branch.</p></div><div class="cell"><span class="cell__k">Blocked</span><div class="cell__v">Protected branches</div><p>Pushes to main, master, prod, production, release.</p></div><div class="cell"><span class="cell__k">Blocked</span><div class="cell__v">History rewriting</div><p><code>filter-branch</code>, <code>filter-repo</code>, hard reset to a remote.</p></div><div class="cell"><span class="cell__k">Blocked</span><div class="cell__v">Blind staging</div><p><code>git add -A</code> and <code>git add .</code>stage explicitly.</p></div><div class="cell"><span class="cell__k">Blocked</span><div class="cell__v">Secret commits</div><p>Anything matching the credential patterns in <code>hygiene.mjs</code>.</p></div><div class="cell"><span class="cell__k">Blocked</span><div class="cell__v">Escaping the tree</div><p>Operating outside the working directory.</p></div></div>
 
     <h2>The loop halts on</h2>
@@ -74,6 +74,6 @@
     <p>At <code>commit</code> and <code>autonomous</code> the loop runs in a git worktree, so
     an unattended run never touches your working tree.</p>
 
-<footer class="footer"><span>Apache-2.0 - derived from eight upstream projects</span>
+<footer class="footer"><span>Apache-2.0 - derived from ten upstream projects</span>
 <a href="credits.html">Attribution</a><a href="harnesses.html">Harness support</a></footer></main></div>
 <script src="assets/sinter.js"></script></body></html>

@@ -2,6 +2,19 @@
  "version": "0.1.0",
  "skills": [
   {
+   "name": "access-mode",
+   "group": "Surfaces",
+   "desc": "User-selected output profiles that reshape how Sinter presents its answers for neurodivergent readers: adhd, autistic, and audhd. Changes structure, ordering, and signposting, not the technical content. Turn on only when the user explicitly asks, with \"/sinter:access <profile>\", \"adhd mode\", \"autistic mode\", \"audhd mode\", \"focus mode\", or a plain request to format replies this way. Stays on until the user turns it off. Do NOT activate this on your own guess about the reader, and do NOT use it to decide how much work to do (that is `router`) or how dense the prose is (that is `prose-register`).",
+   "fires": "",
+   "neg": "",
+   "source": "",
+   "refs": [
+    "adhd",
+    "audhd",
+    "autistic"
+   ]
+  },
+  {
    "name": "accessibility",
    "group": "Quality",
    "desc": "Use when building or reviewing any user interface - web, native mobile, or desktop. Owns accessibility testing. 0); a11y is semantics, not aesthetics.",
@@ -236,6 +249,15 @@
    "refs": []
   },
   {
+   "name": "modules",
+   "group": "Always on",
+   "desc": "How Sinter's skills are grouped into modules and brought into scope. Use at the start of a task, right after the router picks a lane, to pull in the domain module a task needs (networking, compliance, data, growth, media, ml, security, access) without any setup. Also fires when the user says \"/sinter:modules\", asks which modules exist, or asks to turn one on or off. Everything ships in one plugin and activates on demand; there is nothing to install. Do NOT treat a module as new behavior - it only scopes which skills are in play. Inspired by BMAD-METHOD's module system (MIT).",
+   "fires": "",
+   "neg": "",
+   "source": "",
+   "refs": []
+  },
+  {
    "name": "observability",
    "group": "Ship",
    "desc": "Use when adding logging, metrics, tracing, or alerts, or when diagnosing a production issue. For the EU regulation DORA see `compliance`, not this skill.",
@@ -459,6 +481,12 @@
  ],
  "commands": [
   {
+   "name": "access",
+   "desc": "Turn a neurodivergent output profile on or off (adhd, autistic, audhd).",
+   "args": "[adhd|autistic|audhd|standard|off|status]",
+   "body": "# /sinter:access\n\nSelect how Sinter arranges its replies, for the reader who asked. Reads the\n`access-mode` skill.\n\n- `/sinter:access adhd` - action-first, numbered, visible progress, short lists.\n- `/sinter:access autistic` - literal, explicit, complete, predictable structure.\n- `/sinter:access audhd` - both, reconciled by layering action over complete detail.\n- `/sinter:access standard` or `off` - turn the profile off, back to normal output.\n- `/sinter:access status` or no argument - report the active profile and where it was set.\n\nThe profile stays on for the whole session until turned off, or until written\nto `sinter.config.json` under `access.profile` to persist it. Plain-language\nrequests work too (\"adhd mode\", \"stop autistic mode\").\n\nSinter never selects a profile on its own. It applies one only when the user\nasks for it."
+  },
+  {
    "name": "amend",
    "desc": "Modify an approved plan through conversation.",
    "args": "<what changed>",
@@ -535,6 +563,12 @@
    "desc": "Set lane, dials, and autonomy level.",
    "args": "[lane auto|lazy|standard|full] [build lite|full|ultra] [prose normal|tight|terse] [autonomy propose|commit|autonomous]",
    "body": "# /sinter:mode\n\nNo arguments: report the current settings and where each came from\n(inline, session, project config, user config, or default).\n\nSession-scoped unless written to `sinter.config.json`.\n\nResolution order:\n`inline flag > session /mode > ./sinter.config.json > ~/.sinter/config.json > defaults`"
+  },
+  {
+   "name": "modules",
+   "desc": "List Sinter's modules and pin them on, off, or auto.",
+   "args": "[list | show <id> | on <id> | off <id> | auto <id>]",
+   "body": "# /sinter:modules\n\nInspect and control which domain modules are in scope. Reads the `modules`\nskill and `references/registry.json`.\n\n- `list` or no argument - show every module, its summary, and current state\n  (always-on, auto, on, off, or user-toggled).\n- `show <id>` - show one module's skills, packs, and trigger keywords.\n- `on <id>` - keep this module in scope for every task this session.\n- `off <id>` - keep this module out of scope even when a task matches it.\n- `auto <id>` - return to the default: in scope only when a task matches.\n\nThere is nothing to install. Every module already ships in the plugin and is\nauto by default, so this command is only for pinning when a user wants a module\nalways on or always off. Persist a choice by writing it to `sinter.config.json`\nunder `modules`.\n\nThe `access` module is user-toggled and is turned on with `/sinter:access`, not\nhere."
   },
   {
    "name": "plan",
