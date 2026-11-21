@@ -152,6 +152,7 @@
     "components",
     "content-and-ai",
     "current",
+    "exemplars",
     "motion",
     "performance",
     "platforms",
@@ -680,6 +681,7 @@
     "Vue / Nuxt",
     "Angular",
     "Svelte",
+    "Components and design systems",
     "Shared"
    ]
   },
@@ -837,6 +839,7 @@
     "React",
     "Next.js",
     "React Native / Expo",
+    "Components and design systems",
     "Testing",
     "Tooling"
    ]
