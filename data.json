@@ -143,11 +143,22 @@
   {
    "name": "design",
    "group": "Surfaces",
-   "desc": "Use when building or improving user interfaces, or when the user asks for design work - critique, polish, layout, typography, color, motion, or hardening empty and error states. 0).",
-   "fires": "Fires on \"make this look better\", \"design review\", \"UI feels off\", \"polish this\".",
-   "neg": "Do NOT use for accessibility - that is `accessibility`.",
-   "source": "Adapted from Impeccable (Apache-2.",
-   "refs": []
+   "desc": "Principal-level UI and UX design judgment for web, mobile, tablet, and desktop. Use whenever you design, build, restyle, critique, audit, or systematize any interface - screens, components, landing pages, dashboards, forms, onboarding, navigation, design systems, design tokens, or UI code in HTML/CSS, React, SwiftUI, Jetpack Compose, or Flutter. Covers UX strategy, information architecture, layout, typography, color, motion, platform conventions (Apple, Material 3, Fluent), and current CSS.",
+   "fires": "Fires on \"make it look good\", \"modern\", \"clean this up\", \"improve the UX\", \"design review\", \"UI feels off\", \"is this accessible\".",
+   "neg": "Do NOT use for formal WCAG auditing and remediation - that is `accessibility`; or for building chart color systems - that is the dataviz skill where present.",
+   "source": "",
+   "refs": [
+    "accessibility",
+    "components",
+    "content-and-ai",
+    "current",
+    "motion",
+    "performance",
+    "platforms",
+    "systems-and-tokens",
+    "ux-foundations",
+    "visual-craft"
+   ]
   },
   {
    "name": "docs-lookup",
@@ -518,9 +529,9 @@
   },
   {
    "name": "design",
-   "desc": "Frontend design work - critique, polish, layout, motion, hardening.",
-   "args": "<lens> [target]",
-   "body": "# /sinter:design\n\nRoute to `design`. Lens is one of: critique, polish, distill, bolder, quieter,\nlayout, typeset, colorize, animate, harden, delight.\n\nReads `PRODUCT.md` and `DESIGN.md` if present; asks audience and brand-vs-product\nif not.\n\nRuns `scripts/detectors.mjs` first - deterministic, no model.\n\nAccessibility findings route to `accessibility` and are not styling\npreferences."
+   "desc": "UI/UX design work - create, redesign, critique, audit, systematize, build.",
+   "args": "[mode] [target]",
+   "body": "# /sinter:design\n\nRoute to the `design` skill. Mode is one of: create, redesign, critique, audit,\nsystematize, build, research. If no mode is given, the skill infers one from the\nrequest.\n\nReads `PRODUCT.md` and `DESIGN.md` if present; otherwise states its assumptions\nabout audience and brand-vs-product in one line and proceeds, asking only when a\nwrong guess would be expensive.\n\nFor a critique or audit, output ranked issues (Blocker / Major / Minor / Polish)\nwith evidence and a concrete fix for each, per the skill's rubric.\n\nFormal WCAG auditing and remediation route to `accessibility`; design handles\naccessibility as a design input, not as a conformance audit."
   },
   {
    "name": "fix",
