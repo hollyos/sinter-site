@@ -54,7 +54,7 @@
     <p>Nothing here is a new command you have to remember. These are defaults, they apply
     to the way you already talk to your agent.</p>
     <div class="scroller reveal" role="region" tabindex="0" aria-label="Table: What agents tend to do and related columns, scrollable"><table class="reveal ba">
-      <th scope="col"ead><tr><th scope="col">What agents tend to do</th><th scope="col">What Sinter does instead</th></tr></thead>
+      <thead><tr><th scope="col">What agents tend to do</th><th scope="col">What Sinter does instead</th></tr></thead>
       <tbody>
         <tr><td>Gives a typo fix the same ceremony as a new service</td>
             <td>Reads the task, picks a depth, and says which one in a line</td></tr>
@@ -77,7 +77,7 @@
     <p>One router runs before any work and picks a depth lane. Everything downstream: how much gets built, what the test policy is, whether a plan and a human gate are
     required: follows from that one decision.</p>
     <div class="scroller reveal" role="region" tabindex="0" aria-label="Table: Lane and related columns, scrollable"><table class="reveal">
-      <th scope="col"ead><tr><th scope="col">Lane</th><th scope="col">For</th><th scope="col">Tests</th><th scope="col">You get</th></tr></thead>
+      <thead><tr><th scope="col">Lane</th><th scope="col">For</th><th scope="col">Tests</th><th scope="col">You get</th></tr></thead>
       <tbody>
         <tr><td><span class="tag">lazy</span></td><td>One file, a known fix</td>
             <td>One runnable check if the logic is non-trivial</td><td>Code, then three lines</td></tr>
@@ -131,11 +131,11 @@
 
     <h2>What it knows</h2>
     <div class="cells cells--3 reveal">
-      <div class="cell"><span class="cell__k">Skills</span><div class="cell__v">48</div>
+      <div class="cell"><span class="cell__k">Skills</span><div class="cell__v">52</div>
         <p>Each with an explicit trigger and an explicit non-trigger.</p></div>
       <div class="cell"><span class="cell__k">Stack packs</span><div class="cell__v">20</div>
         <p>Real idiom and gotchas, loaded when your stack is detected.</p></div>
-      <div class="cell"><span class="cell__k">Commands</span><div class="cell__v">15</div>
+      <div class="cell"><span class="cell__k">Commands</span><div class="cell__v">18</div>
         <p>Build, review, debug, plan, audit, comply, and the rest.</p></div>
     </div>
     <p>Frontend, backend, databases of every family, devops, cloud, self-hosting, networking,
@@ -154,10 +154,11 @@
     <p><em>Sinter</em> is the metallurgical process that fuses separate particles into one
     solid mass under heat and pressure, without melting away what each one was. The plugin
     is built the same way.</p>
-    <p>Eight open-source methodologies each solve one part of this well. Installed together
+    <p>Several open-source methodologies each solve one part of this well. Installed together
     they collide, three try to own how verbose your agent is, two try to own its test
     policy, two try to own its plan format. You end up arbitrating conflicts your tools
-    should have settled. Sinter settles all nine, once, at design time.</p>
+    should have settled. Sinter settles all nine, once, at design time, and folds in later
+    upstreams the same way: adapted, not bolted on.</p>
     <figure class="hero__stage">
       <canvas id="sinterStage" role="img"
         aria-label="Loose particles grow and fuse into one continuous body. Eight grains remain labelled with the names of the upstream projects, separated by visible grain boundaries."></canvas>

@@ -49,6 +49,10 @@
   <span class="k">"stacks"</span>:    { <span class="k">"detect"</span>: true, <span class="k">"packs"</span>: null,
                  <span class="k">"packsDir"</span>: <span class="k">".sinter/packs"</span>, <span class="k">"override"</span>: <span class="k">"merge"</span> },
 
+  <span class="k">"modules"</span>:   { <span class="k">"networking"</span>: <span class="k">"auto"</span>, <span class="k">"compliance"</span>: <span class="k">"auto"</span> },
+
+  <span class="k">"access"</span>:    { <span class="k">"profile"</span>: null },
+
   <span class="k">"compliance"</span>:{ <span class="k">"frameworks"</span>: [], <span class="k">"evidenceDir"</span>: <span class="k">".sinter/evidence"</span> },
 
   <span class="k">"integrations"</span>: { <span class="k">"codebaseMemoryMcp"</span>: <span class="k">"auto"</span>, <span class="k">"playwright"</span>: <span class="k">"auto"</span> }
@@ -57,7 +61,7 @@
     <h2>Learning scopes</h2>
     <p>Scopes compose on read, team, then user, then project, later wins, and write to
     exactly one store.</p>
-    <div class="scroller reveal" role="region" tabindex="0" aria-label="Table: Scope and related columns, scrollable"><table class="reveal"><th scope="col"ead><tr><th scope="col">Scope</th><th scope="col">Store</th><th scope="col">For</th></tr></thead><tbody>
+    <div class="scroller reveal" role="region" tabindex="0" aria-label="Table: Scope and related columns, scrollable"><table class="reveal"><thead><tr><th scope="col">Scope</th><th scope="col">Store</th><th scope="col">For</th></tr></thead><tbody>
       <tr><td><code>none</code></td><td></td><td>One-offs. Nothing read, nothing written.</td></tr>
       <tr><td><code>project</code> <em>default</em></td><td><code>.sinter/learnings/</code></td><td>Conventions and gotchas for this codebase.</td></tr>
       <tr><td><code>user</code></td><td><code>~/.sinter/learnings/</code></td><td>Personal preferences across projects.</td></tr>
@@ -85,6 +89,16 @@
     degraded gracefully if not. Without the codebase graph, cross-file reviewers fall back to
     grep traversal <em>and the report says so</em>, rather than silently returning shallower
     findings.</p>
+
+    <h2>Modules and reader access</h2>
+    <p><code>modules</code> pins the domain modules. Every module is <code>auto</code> by
+    default, pulled into scope only when a task matches it, so this block is optional; set a
+    module to <code>on</code> to keep it always in scope or <code>off</code> to keep it out.
+    See <a href="modules.html">Modules</a>.</p>
+    <p><code>access</code> sets the reader-accessibility profile, one of <code>adhd</code>,
+    <code>autistic</code>, <code>audhd</code>, or <code>null</code>. It is the one setting
+    Sinter never infers; it applies only when you choose it. See
+    <a href="accessibility.html">Accessibility</a>.</p>
 
 <footer class="footer"><span>Apache-2.0 - derived from ten upstream projects</span>
 <a href="credits.html">Attribution</a><a href="harnesses.html">Harness support</a></footer></main></div>
